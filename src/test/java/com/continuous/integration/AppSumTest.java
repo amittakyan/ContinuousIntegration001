@@ -11,10 +11,7 @@ public class AppSumTest {
 		App junitApp=new App();
 		int result= junitApp.add(100, 200);
 		assertEquals(300, result);
-		if(result==300){
-			
-			System.out.println("Sum--->"+result);
-		}
+	
 	}
 
 }
