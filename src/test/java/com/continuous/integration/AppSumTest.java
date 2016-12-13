@@ -10,7 +10,7 @@ public class AppSumTest {
 	public void addtest() {
 		App junitApp=new App();
 		int result= junitApp.add(100, 200);
-		assertEquals(300, result);
+		assertEquals(400, result);
 	
 	}
 
