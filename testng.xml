@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+ <test name="JUnitTests" junit="true">
+      <classes>
+         <class name="com.continuous.integration.AppSumTest"/>
+      	 <class name="com.continuous.integration.TestStringAdd"/>
+      	 <class name="com.continuous.integration.RunAllTests"/>
+      </classes>
+   </test>
+  <test name="SeleniumTests">
+    <classes>
+      <class name="com.continuous.integration.TestNGSeleniumSimpleSearchExample"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

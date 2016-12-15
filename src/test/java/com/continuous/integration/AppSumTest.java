@@ -9,7 +9,7 @@ public class AppSumTest {
 	@Test
 	public void addtest() {
 		App junitApp=new App();
-		int result= junitApp.add(100, 200);
+		int result= junitApp.add(200, 200);
 		assertEquals(400, result);
 	
 	}

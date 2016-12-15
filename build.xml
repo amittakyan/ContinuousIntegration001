@@ -5,8 +5,7 @@
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="ContinuousIntegration">
     <property environment="env"/>
-    <property name="ECLIPSE_HOME" value="../../../../../../../Desktop/eclipse/"/>
-    <property name="junit.output.dir" value="junit"/>
+    <property name="ECLIPSE_HOME" value="../../../../eclipse-jee-oxygen-M3-win32-x86_64/eclipse/"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.5"/>
     <property name="source" value="1.5"/>
@@ -52,6 +51,10 @@
         <pathelement location="../../../../../.m2/repository/org/eclipse/jetty/jetty-io/9.2.15.v20160210/jetty-io-9.2.15.v20160210.jar"/>
         <pathelement location="../../../../../.m2/repository/org/eclipse/jetty/websocket/websocket-common/9.2.15.v20160210/websocket-common-9.2.15.v20160210.jar"/>
         <pathelement location="../../../../../.m2/repository/org/eclipse/jetty/websocket/websocket-api/9.2.15.v20160210/websocket-api-9.2.15.v20160210.jar"/>
+        <pathelement location="../../../../../.m2/repository/org/testng/testng/6.8/testng-6.8.jar"/>
+        <pathelement location="../../../../../.m2/repository/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar"/>
+        <pathelement location="../../../../../.m2/repository/com/beust/jcommander/1.27/jcommander-1.27.jar"/>
+        <pathelement location="../../../../../.m2/repository/org/yaml/snakeyaml/1.6/snakeyaml-1.6.jar"/>
     </path>
     <path id="JUnit 4.libraryclasspath">
         <pathelement location="${ECLIPSE_HOME}plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
@@ -65,23 +68,7 @@
         <path refid="Maven Dependencies.libraryclasspath"/>
         <path refid="JUnit 4.libraryclasspath"/>
     </path>
-    <path id="run.AppSumTest.classpath">
-        <path refid="ContinuousIntegration.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
-    <path id="run.AppTest.classpath">
-        <path refid="ContinuousIntegration.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
-    <path id="run.RunAllTests.classpath">
-        <path refid="ContinuousIntegration.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
-    <path id="run.TestStringAdd.classpath">
-        <path refid="ContinuousIntegration.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
-    <path id="run.ContinuousIntegration (2).classpath">
+    <path id="run.knowOS.classpath">
         <path refid="ContinuousIntegration.classpath"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
     </path>
@@ -90,13 +77,11 @@
         <mkdir dir="target/test-classes"/>
         <copy includeemptydirs="false" todir="target/classes">
             <fileset dir="src/main/java">
-                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
         <copy includeemptydirs="false" todir="target/test-classes">
             <fileset dir="src/test/java">
-                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -133,54 +118,9 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="AppSumTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="com.continuous.integration.AppSumTest" todir="${junit.output.dir}"/>
-            <classpath refid="run.AppSumTest.classpath"/>
-        </junit>
-    </target>
-    <target name="AppTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="com.continuous.integration.AppTest" todir="${junit.output.dir}"/>
-            <classpath refid="run.AppTest.classpath"/>
-        </junit>
-    </target>
-    <target name="RunAllTests">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="com.continuous.integration.RunAllTests" todir="${junit.output.dir}"/>
-            <classpath refid="run.RunAllTests.classpath"/>
-        </junit>
-    </target>
-    <target name="TestStringAdd">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="com.continuous.integration.TestStringAdd" todir="${junit.output.dir}"/>
-            <classpath refid="run.TestStringAdd.classpath"/>
-        </junit>
-    </target>
-    <target name="ContinuousIntegration (2)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="com.continuous.integration.AppSumTest" todir="${junit.output.dir}"/>
-            <test name="com.continuous.integration.RunAllTests" todir="${junit.output.dir}"/>
-            <test name="com.continuous.integration.TestStringAdd" todir="${junit.output.dir}"/>
-            <classpath refid="run.ContinuousIntegration (2).classpath"/>
-        </junit>
-    </target>
-    <target name="junitreport">
-        <junitreport todir="${junit.output.dir}">
-            <fileset dir="${junit.output.dir}">
-                <include name="TEST-*.xml"/>
-            </fileset>
-            <report format="frames" todir="${junit.output.dir}"/>
-        </junitreport>
+    <target name="knowOS">
+        <java classname="com.continuous.integration.knowOS" failonerror="true" fork="yes">
+            <classpath refid="run.knowOS.classpath"/>
+        </java>
     </target>
 </project>
