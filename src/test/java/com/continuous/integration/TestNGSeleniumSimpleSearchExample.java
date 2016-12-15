@@ -24,7 +24,7 @@ public class TestNGSeleniumSimpleSearchExample {
 		System.setProperty("webdriver.gecko.driver","C:\\FirFoxDriver\\geckodriver.exe");
 		}else if (System.getProperty("os.name").contains("Linux")){
 			System.out.println("You are testing in linux machine");
-		System.setProperty("webdriver.gecko.driver","//home/amit//lib//geckodriver");
+		System.setProperty("webdriver.gecko.driver","/home/amit/lib/geckodriver");
 		
 		}
 		driver = new FirefoxDriver(capabilities);
