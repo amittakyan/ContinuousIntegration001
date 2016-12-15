@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
@@ -15,6 +16,8 @@ public class TestNGSeleniumSimpleSearchExample {
 
 	@BeforeSuite
 	public void initDriver() throws Exception {
+		DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+		capabilities.setCapability("marionette", true);
 		System.out.println("You are testing in firefox");
 		if(System.getProperty("os.name").contains("Windows")){
 		System.out.println("You are testing in window machine");
@@ -22,8 +25,9 @@ public class TestNGSeleniumSimpleSearchExample {
 		}else if (System.getProperty("os.name").contains("Linux")){
 			System.out.println("You are testing in linux machine");
 		System.setProperty("webdriver.gecko.driver","/home/amit/lib/geckodriver");
+		
 		}
-		driver = new FirefoxDriver();
+		driver = new FirefoxDriver(capabilities);
 	}
 
 	@Test
