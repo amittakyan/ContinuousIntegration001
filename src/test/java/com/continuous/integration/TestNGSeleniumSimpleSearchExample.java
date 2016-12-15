@@ -27,7 +27,7 @@ public class TestNGSeleniumSimpleSearchExample {
 		System.setProperty("webdriver.gecko.driver","/home/amit/lib/geckodriver");
 		
 		}
-		driver = new FirefoxDriver(capabilities);
+		driver = new FirefoxDriver();
 	}
 
 	@Test
