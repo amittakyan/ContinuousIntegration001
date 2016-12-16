@@ -20,7 +20,7 @@ public class TestNGSeleniumSimpleSearchExample {
 	public void initDriver() throws Exception {
 		DesiredCapabilities cap = DesiredCapabilities.firefox();
 		cap.setBrowserName("firefox");
-		cap.setCapability("marionette", false);
+		cap.setCapability("marionette", true);
 		
 		System.out.println("You are testing in firefox");
 		if(System.getProperty("os.name").contains("Windows")){
