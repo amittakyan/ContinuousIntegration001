@@ -27,12 +27,12 @@ public class TestNGSeleniumSimpleSearchExample {
 		System.setProperty("webdriver.gecko.driver","C:\\FirFoxDriver\\geckodriver.exe");
 		}else if (System.getProperty("os.name").contains("Linux")){
 			System.out.println("You are testing in linux machine");
-			cap.setCapability("firefox_binary",
-				       new File("/usr/bin/firefox").
-				              getAbsolutePath());
-			String marionetteDriverLocation = "/home/amit/bin/geckodriver"; 
-			System.out.println("Path---->"+marionetteDriverLocation);
-		System.setProperty("webdriver.gecko.driver",marionetteDriverLocation);
+			//cap.setCapability("firefox_binary",
+				       //new File("/usr/bin/firefox").
+				        //      getAbsolutePath());
+			//String marionetteDriverLocation = "/home/amit/bin/geckodriver"; 
+			//System.out.println("Path---->"+marionetteDriverLocation);
+		System.setProperty("webdriver.gecko.driver",new File("/home/amit/bin/geckodriver").getAbsolutePath());
 		
 		}
 		  driver = new FirefoxDriver(cap);
