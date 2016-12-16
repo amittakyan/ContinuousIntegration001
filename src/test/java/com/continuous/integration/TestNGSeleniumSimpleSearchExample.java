@@ -32,8 +32,8 @@ public class TestNGSeleniumSimpleSearchExample {
 				       //new File("/usr/bin/firefox").
 				        //      getAbsolutePath());
 			//String marionetteDriverLocation = "/home/amit/bin/geckodriver"; 
-			System.out.println("Path---->"+new File("/home/amit/bin/geckodriver").getAbsolutePath());
-			System.setProperty("webdriver.gecko.driver",new File("/home/amit/bin/geckodriver").getAbsolutePath());
+			//System.out.println("Path---->"+new File("/home/amit/bin/geckodriver").getAbsolutePath());
+			//System.setProperty("webdriver.gecko.driver",new File("/home/amit/bin/geckodriver").getAbsolutePath());
 		
 		}
 		  driver = new FirefoxDriver(cap);
