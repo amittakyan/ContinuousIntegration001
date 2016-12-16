@@ -25,7 +25,7 @@ public class TestNGSeleniumSimpleSearchExample {
 		}else if (System.getProperty("os.name").contains("Linux")){
 			System.out.println("You are testing in linux machine");
 			//String currentDir = System.getProperty("user.dir");
-			String marionetteDriverLocation = "/home/amit/bin/geckodriver.exe"; 
+			String marionetteDriverLocation = "/home/amit/bin/geckodriver"; 
 			System.out.println("Path---->"+marionetteDriverLocation);
 		System.setProperty("webdriver.gecko.driver",marionetteDriverLocation);
 		
