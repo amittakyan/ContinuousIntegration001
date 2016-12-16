@@ -17,7 +17,7 @@ public class TestNGSeleniumSimpleSearchExample {
 	@BeforeSuite
 	public void initDriver() throws Exception {
 		DesiredCapabilities cap = DesiredCapabilities.firefox();
-		cap.setCapability("marionette", true);
+		cap.setCapability("marionette", false);
 		System.out.println("You are testing in firefox");
 		if(System.getProperty("os.name").contains("Windows")){
 		System.out.println("You are testing in window machine");
@@ -30,7 +30,7 @@ public class TestNGSeleniumSimpleSearchExample {
 		System.setProperty("webdriver.gecko.driver",marionetteDriverLocation);
 		
 		}
-		driver = new FirefoxDriver(cap);
+		  driver = new FirefoxDriver(cap);
 	}
 
 	@Test
