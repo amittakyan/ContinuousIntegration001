@@ -19,7 +19,7 @@ public class TestNGSeleniumSimpleSearchExample {
 	@BeforeSuite
 	public void initDriver() throws Exception {
 		DesiredCapabilities cap = DesiredCapabilities.firefox();
-		cap.setCapability("marionette", false);
+		cap.setCapability("marionette", true);
 		
 		System.out.println("You are testing in firefox");
 		if(System.getProperty("os.name").contains("Windows")){
@@ -31,7 +31,7 @@ public class TestNGSeleniumSimpleSearchExample {
 				       //new File("/usr/bin/firefox").
 				        //      getAbsolutePath());
 			//String marionetteDriverLocation = "/home/amit/bin/geckodriver"; 
-			//System.out.println("Path---->"+marionetteDriverLocation);
+			System.out.println("Path---->"+new File("/home/amit/bin/geckodriver").getAbsolutePath());
 		System.setProperty("webdriver.gecko.driver",new File("/home/amit/bin/geckodriver").getAbsolutePath());
 		
 		}
