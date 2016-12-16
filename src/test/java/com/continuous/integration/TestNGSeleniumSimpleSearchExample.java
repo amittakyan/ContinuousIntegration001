@@ -1,5 +1,7 @@
 package com.continuous.integration;
 
+import java.io.File;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,13 +20,16 @@ public class TestNGSeleniumSimpleSearchExample {
 	public void initDriver() throws Exception {
 		DesiredCapabilities cap = DesiredCapabilities.firefox();
 		cap.setCapability("marionette", false);
+		
 		System.out.println("You are testing in firefox");
 		if(System.getProperty("os.name").contains("Windows")){
 		System.out.println("You are testing in window machine");
 		System.setProperty("webdriver.gecko.driver","C:\\FirFoxDriver\\geckodriver.exe");
 		}else if (System.getProperty("os.name").contains("Linux")){
 			System.out.println("You are testing in linux machine");
-			//String currentDir = System.getProperty("user.dir");
+			cap.setCapability("firefox_binary",
+				       new File("/usr/bin/firefox").
+				              getAbsolutePath());
 			String marionetteDriverLocation = "/home/amit/bin/geckodriver"; 
 			System.out.println("Path---->"+marionetteDriverLocation);
 		System.setProperty("webdriver.gecko.driver",marionetteDriverLocation);
