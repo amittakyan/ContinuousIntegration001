@@ -18,9 +18,9 @@ public class TestNGSeleniumSimpleSearchExample {
 
 	@BeforeSuite
 	public void initDriver() throws Exception {
-		//DesiredCapabilities cap = DesiredCapabilities.firefox();
-		//cap.setBrowserName("firefox");
-		//cap.setCapability("marionette", true);
+		DesiredCapabilities cap = DesiredCapabilities.firefox();
+		cap.setBrowserName("firefox");
+		cap.setCapability("marionette", true);
 		
 		System.out.println("You are testing in firefox");
 		if(System.getProperty("os.name").contains("Windows")){
@@ -36,7 +36,7 @@ public class TestNGSeleniumSimpleSearchExample {
 			System.setProperty("webdriver.gecko.driver",new File("/home/amit/bin/geckodriver").getAbsolutePath());
 		
 		}
-		  driver = new FirefoxDriver();
+		  driver = new FirefoxDriver(cap);
 	}
 
 	@Test
