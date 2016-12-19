@@ -8,9 +8,9 @@
       	 <class name="com.continuous.integration.RunAllTests"/>
       </classes>
    </test>
-  <test name="SeleniumTests">
+  <!-- <test name="SeleniumTests">
     <classes>
       <class name="com.continuous.integration.TestNGSeleniumSimpleSearchExample"/>
     </classes>
-  </test> <!-- Test -->
+  </test>  --><!-- Test -->
 </suite> <!-- Suite -->
