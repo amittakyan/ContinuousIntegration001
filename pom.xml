@@ -43,12 +43,12 @@
         <repository>
             <id>deployment</id>
             <name>Internal Releases</name>
-            <url>http://46341b9c.ngrok.io/nexus/content/repositories/releases/</url>
+            <url>http://9e654903.ngrok.io/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
             <id>deployment</id>
             <name>Internal Snapshot Releases</name>
-            <url>http://46341b9c.ngrok.io/nexus/content/repositories/snapshots/</url>
+            <url>http://9e654903.ngrok.io/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
   </distributionManagement>
     <build>
