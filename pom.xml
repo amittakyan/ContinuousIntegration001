@@ -40,19 +40,19 @@
         </developer>
     </developers>
     <distributionManagement>
-        <repository>
-            <id>deployment</id>
-            <name>Internal Releases</name>
-            <url>http://9e654903.ngrok.io/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>deployment</id>
-            <name>Internal Snapshot Releases</name>
-            <url>http://9e654903.ngrok.io/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-  </distributionManagement>
+	<repository>
+	  <id>nexus</id>
+	  <name>Nexus Releases</name>
+	  <url>http://9e654903.ngrok.io/nexus/content/repositories/releases</url>
+	</repository>
+	<snapshotRepository>
+	  <id>nexus</id>
+	  <name>Nexus Snapshot</name>
+	  <url>http://9e654903.ngrok.io/nexus/content/repositories/snapshots</url>
+	</snapshotRepository>
+</distributionManagement>
     <build>
-    	<finalName>javaee7-simple-sample</finalName>
+    	<finalName>Continuous-Integration</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
