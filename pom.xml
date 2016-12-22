@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.continuous.Integration</groupId>
     <artifactId>Continuous-Integration</artifactId>
-    <version>1.15-SNAPSHOT</version>
+    <version>1.16-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>ContinuousIntegration</name>
     <properties>
